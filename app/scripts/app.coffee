@@ -51,7 +51,7 @@ angular
 
     $routeProvider
     .when('/',
-        templateUrl: appVersionProvider.versionUrl("views/pages/index.html")
+        templateUrl: "views/pages/index.html"
         controller: 'IndexController'
       )
     .otherwise(
@@ -89,5 +89,8 @@ angular
     $rootScope.appVersion = appVersion
     $rootScope.appConfig = appConfig
 
+])
+.run(['$templateCache', ($templateCache) ->
+  $templateCache.put('views/pages/index.html', "<kb-applications></kb-applications>")
 ])
 

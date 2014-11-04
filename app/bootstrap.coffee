@@ -23,6 +23,7 @@ jQuery(($) ->
         appName: appName
         components: configuration.components
         writerId: getParameterByName('writerId')
+        projectBaseUrl: "#{sapiUrl}/projects-new/#{verifiedTokenData.owner.id}"
       )
 
     angular.bootstrap(angular.element.find('body'), [appName])
