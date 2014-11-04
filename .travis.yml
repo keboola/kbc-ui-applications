@@ -15,3 +15,7 @@ install:
 script: grunt
 after_success:
 - grunt upload-release
+env:
+  global:
+  - secure: UWcTJxaiHsE84o3jr/sVLIjevTX07s/f/kuiQmhFXlc0r+TYMasV+6NEFRT+5e/ycznbRAnhFTTEiwmtcb7CCTh9hs0NulFigGMtt/JfIX3JkUovgETVBNp5MRxEI1jWYAG0+N8jitwUVmsrqZVGNEyZxpZq8Xz9ZbGzusm11W4=
+  - secure: fv+pyYcTXC9PIESaPOrSwPn6XFFcx8akfU1c8CROjHnWPLDnKXWopsNYjA38VslOpCXbpSgyqXlbeMER5CDs7PUGZEiNui0zEbTf/m1dDQX6vHu8+jvWudsys2n27Wtmbwrjp3I5KfxPuvI/xAhbnM6m/d4hCCGnohPUWQrvn4M=
