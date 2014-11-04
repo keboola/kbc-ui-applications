@@ -1,3 +1,10 @@
 
 /** App specific styles **/
 
+.kbc-applications .kb-component-panel {
+  cursor: pointer;
+}
+
+.kbc-applications .kb-component-panel:hover {
+  background-color: #f9f9f9;
+}

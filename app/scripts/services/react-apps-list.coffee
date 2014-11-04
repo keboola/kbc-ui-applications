@@ -4,6 +4,26 @@ angular.module('kbc.applications')
 
     {table, tr, td, th, thead, tbody, span, div, a, p, h3} = React.DOM
 
+    App = React.createFactory(React.createClass(
+      displayName: 'App'
+      propTypes:
+        app: React.PropTypes.object.isRequired
+      appUrl: ->
+        "#{config.projectBaseUrl}/application?app=#{@props.app.ui}"
+      goToApp: ->
+        window.location.href = @appUrl()
+      render: ->
+        (div className: 'col-sm-4', onClick: @goToApp,
+          (div className: 'panel panel-default kb-component-panel kb-pointer',
+            (div className: 'panel-body text-center',
+              (h3 null, @props.app.name)
+              (p null, @props.app.description)
+              (a {href: @appUrl(), className: 'btn btn-primary btn-small'}, 'Go to App')
+            )
+          )
+        )
+    ))
+
     React.createClass
       displayName: 'AppsList'
       propTypes:
@@ -19,31 +39,18 @@ angular.module('kbc.applications')
 
       renderAppsRow: (apps) ->
         appElements = _.map(apps, (app) ->
-          @renderApp(app)
+          App(app: app)
         , @)
 
         (div className: 'row', appElements)
 
-      renderApp: (app) ->
-        (div className: 'col-sm-4',
-          (div className: 'panel panel-default kb-component-panel kb-pointer',
-            (div className: 'panel-body text-center',
-              (h3 null, app.name)
-              (p null, app.description)
-              (a {href: @appUrl(app), className: 'btn btn-primary btn-small'}, 'Go to App')
-            )
-          )
-        )
-
-      appUrl: (app) ->
-        "#{config.projectBaseUrl}/application?app=#{app.ui}"
 
       render: ->
         appRows = _.map(@prepareApps(@props.apps), (appsInRow) ->
           @renderAppsRow(appsInRow)
         , @)
 
-        (div className: 'container',
+        (div className: 'container kbc-applications',
           (div className: 'row',
             (div className: 'col-md-12',
               appRows
