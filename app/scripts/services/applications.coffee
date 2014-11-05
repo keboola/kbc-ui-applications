@@ -4,11 +4,11 @@ angular.module('kbc.applications')
     [
       id: 'tagging'
       name: 'Tagging'
-      description: 'Tagging tool'
+      description: 'Describe your data with predefined or custom tags'
       ui: 'kbc.docToolTagging'
     ,
       id: 'recipes'
       name: 'Recipes'
-      description: 'Recipes tool'
+      description: 'Create predefined transformations or run analysis on your data'
       ui: 'kbc.docToolRecipes'
     ]
