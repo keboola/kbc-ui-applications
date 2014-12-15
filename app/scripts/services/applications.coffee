@@ -11,4 +11,9 @@ angular.module('kbc.applications')
       name: 'Recipes'
       description: 'Create predefined transformations or run analysis on your data'
       ui: 'kbc.docToolRecipes'
+    ,
+      id: 'transformations'
+      name: 'Transformations (EA Preview)'
+      description: 'Early adopter preview of transformation UI connected to asynchronous API'
+      ui: 'kbc.transformations-new'
     ]
